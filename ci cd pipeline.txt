@@ -1,0 +1,121 @@
+Great! Setting up a **CI/CD pipeline** for your PyCharm + GitHub Python project is a powerful step forward.
+
+Let’s walk through how to set up **CI/CD using GitHub Actions**, which is built-in, free, and works perfectly with Python projects.
+
+---
+
+## 🚀 Step-by-Step: Set Up CI/CD for a Python Project Using GitHub Actions
+
+---
+
+### ✅ **1. Create the GitHub Actions Workflow**
+
+Inside your PyCharm project, create the following directory and file:
+
+**Path:** `.github/workflows/python-ci.yml`
+
+---
+
+### 📄 `python-ci.yml` Example (Basic CI Workflow)
+
+```yaml
+name: Python CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Run Pytest
+      run: |
+        pytest
+```
+
+---
+
+### ✅ **2. Add `requirements.txt` and Tests**
+
+In your PyCharm project root, make sure you have:
+
+* A `requirements.txt` file with all your dependencies:
+
+  ```
+  pytest
+  requests
+  # Add any other packages here
+  ```
+
+* A test folder (e.g. `tests/` or `Pytest_topics/`) with test files like:
+
+  ```python
+  def test_sample():
+      assert 1 + 1 == 2
+  ```
+
+---
+
+### ✅ **3. Commit and Push Workflow File**
+
+In terminal:
+
+```bash
+git add .github/workflows/python-ci.yml
+git add requirements.txt
+git commit -m "Add GitHub Actions CI pipeline"
+git push
+```
+
+---
+
+### ✅ **4. See It in Action on GitHub**
+
+Go to your GitHub repo:
+
+* Click on the **Actions** tab.
+* You will see your workflow running.
+* It installs dependencies, runs tests, and reports success/failure.
+
+---
+
+## 🧪 Bonus: Add Badges to README.md
+
+```markdown
+![CI](https://github.com/gajjs/Python_Automation/actions/workflows/python-ci.yml/badge.svg)
+```
+
+---
+
+## 💡 Optional CI/CD Add-Ons:
+
+* **Linting**: Add `flake8` or `pylint` to the workflow.
+* **Deployment**: Extend the workflow to deploy to AWS, Heroku, or Docker Hub.
+* **Coverage**: Add code coverage reports using `coverage.py` + `codecov`.
+
+---
+
+Would you like help:
+
+* Writing a more advanced pipeline (with build/lint/test)?
+* Deploying code automatically after CI passes?
+
+Let me know your goal for the pipeline!

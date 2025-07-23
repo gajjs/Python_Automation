@@ -1,6 +1,17 @@
-To connect your PyCharm project at `G:\Python_Automation` to GitHub, follow these steps:
 
----
+You need to **select the directory `G:\Python_Automation` and set the VCS to `Git`**.
+
+### ✅ Here’s Exactly What To Do:
+
+1. In **Settings → Version Control**, click on **`Directory Mappings`** on the right.
+2. Click the **➕ (Add)** button.
+3. In the dialog:
+
+   * **Select directory**: `G:\Python_Automation`
+   * **VCS**: Choose **`Git`** from the dropdown.
+4. Click **OK** or **Apply** to save.
+
+To connect your PyCharm project at `G:\Python_Automation` to GitHub, follow these steps:
 
 ### ✅ **Step 1: Initialize Git in Your Project Folder**
 
@@ -9,14 +20,10 @@ To connect your PyCharm project at `G:\Python_Automation` to GitHub, follow thes
 3. Go to `VCS` > `Enable Version Control Integration`.
 4. Select `Git` and click OK.
 
----
-
 ### ✅ **Step 2: Commit Your Code**
 
 1. Go to `VCS` > `Commit` (or use `Ctrl + K`).
 2. Select files, write a commit message, and click **Commit**.
-
----
 
 ### ✅ **Step 3: Create a New Repository on GitHub**
 
@@ -24,8 +31,6 @@ To connect your PyCharm project at `G:\Python_Automation` to GitHub, follow thes
 2. Click `+` (top right) > **New repository**.
 3. Name your repo (e.g., `Python_Automation`), **don’t initialize with a README**.
 4. Click **Create repository**.
-
----
 
 ### ✅ **Step 4: Link Local Project to GitHub Remote**
 
@@ -37,15 +42,12 @@ To connect your PyCharm project at `G:\Python_Automation` to GitHub, follow thes
      ```bash
      git remote add origin https://github.com/yourusername/Python_Automation.git
      ```
-
----
-
 ### ✅ **Step 5: Push Code to GitHub**
 
 1. In PyCharm, go to `VCS` > `Git` > `Push` (or use `Ctrl + Shift + K`).
 2. Push to `origin/main` or `origin/master` (depending on your default branch).
 
----
+
 
 ### ✅ **(Optional) Set Up GitHub Authentication**
 
@@ -55,6 +57,119 @@ If you're prompted for authentication:
 * Go to GitHub > **Settings** > **Developer Settings** > **Personal Access Tokens** > **Generate new token**.
 * Select scopes like `repo`, set an expiration, and use that token in PyCharm.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Absolutely! Here's a complete step-by-step guide to:
+
+✅ Create a Python project in **PyCharm**
+✅ Create a **GitHub repository**
+✅ Link both using **Git** and push code to GitHub
+
 ---
 
-Would you like me to generate a `.gitignore` file for Python before you push?
+## 🔧 Step-by-Step Guide to Link PyCharm Project with GitHub
+
+---
+
+### ✅ **Step 1: Create a Project in PyCharm**
+
+1. Open **PyCharm**.
+2. Click on **"New Project"**.
+3. Choose:
+
+   * **Python as the language**
+   * Select your **interpreter** (or create virtualenv if needed)
+4. Name your project (e.g., `Python_Automation`) and click **Create**.
+
+---
+
+### ✅ **Step 2: Enable Git in Your PyCharm Project**
+
+1. Go to `VCS` (Version Control System) > **Enable Version Control Integration**
+2. Choose **Git** and click **OK**
+
+This will create a hidden `.git` folder — now your project is a Git repository.
+
+---
+
+### ✅ **Step 3: Create a GitHub Repository**
+
+1. Go to [https://github.com](https://github.com)
+2. Click on **+ (top-right)** → **New repository**
+3. Name it `Python_Automation`
+4. **Do not** initialize with README or .gitignore (since PyCharm will handle it)
+5. Click **Create Repository**
+
+After creation, GitHub shows you a URL like:
+
+```
+https://github.com/gajjs/Python_Automation.git
+```
+
+---
+
+### ✅ **Step 4: Link PyCharm Project to GitHub Repository**
+
+In **PyCharm Terminal** (at bottom):
+
+```bash
+git remote add origin https://github.com/gajjs/Python_Automation.git
+```
+
+If you already had a wrong URL before:
+
+```bash
+git remote remove origin
+git remote add origin https://github.com/gajjs/Python_Automation.git
+```
+
+---
+
+### ✅ **Step 5: Stage, Commit & Push Code**
+
+In the PyCharm terminal:
+
+```bash
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git push -u origin main
+```
+
+---
+
+### ✅ **Step 6: Verify on GitHub**
+
+Go to [https://github.com/gajjs/Python\_Automation](https://github.com/gajjs/Python_Automation)
+
+✅ You will see your code uploaded there.
+
+---
+
+## 📝 Optional (but good practice):
+
+* Add a `.gitignore` file in PyCharm to avoid pushing unwanted files (e.g., `.idea/`, `__pycache__/`, `.venv/`)
+* Add a `README.md` with basic project info
+
+---
+
+Would you like me to give you the exact `.gitignore` content for Python projects or generate a sample README?
