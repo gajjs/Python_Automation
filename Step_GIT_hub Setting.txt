@@ -1,0 +1,60 @@
+To connect your PyCharm project at `G:\Python_Automation` to GitHub, follow these steps:
+
+---
+
+### ✅ **Step 1: Initialize Git in Your Project Folder**
+
+1. Open PyCharm.
+2. Open your project at `G:\Python_Automation`.
+3. Go to `VCS` > `Enable Version Control Integration`.
+4. Select `Git` and click OK.
+
+---
+
+### ✅ **Step 2: Commit Your Code**
+
+1. Go to `VCS` > `Commit` (or use `Ctrl + K`).
+2. Select files, write a commit message, and click **Commit**.
+
+---
+
+### ✅ **Step 3: Create a New Repository on GitHub**
+
+1. Go to [https://github.com](https://github.com) and log in.
+2. Click `+` (top right) > **New repository**.
+3. Name your repo (e.g., `Python_Automation`), **don’t initialize with a README**.
+4. Click **Create repository**.
+
+---
+
+### ✅ **Step 4: Link Local Project to GitHub Remote**
+
+1. Copy the repo URL (e.g., `https://github.com/yourusername/Python_Automation.git`).
+2. In PyCharm, go to `Git` > `Manage Remotes` (or):
+
+   * Open the terminal (at bottom of PyCharm) and run:
+
+     ```bash
+     git remote add origin https://github.com/yourusername/Python_Automation.git
+     ```
+
+---
+
+### ✅ **Step 5: Push Code to GitHub**
+
+1. In PyCharm, go to `VCS` > `Git` > `Push` (or use `Ctrl + Shift + K`).
+2. Push to `origin/main` or `origin/master` (depending on your default branch).
+
+---
+
+### ✅ **(Optional) Set Up GitHub Authentication**
+
+If you're prompted for authentication:
+
+* Use **GitHub Token** instead of a password.
+* Go to GitHub > **Settings** > **Developer Settings** > **Personal Access Tokens** > **Generate new token**.
+* Select scopes like `repo`, set an expiration, and use that token in PyCharm.
+
+---
+
+Would you like me to generate a `.gitignore` file for Python before you push?
