@@ -35,3 +35,9 @@ jobs:
           name: pytest-report
           path: report.html
 
+      - name: Upload HTML Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: report.html
+
